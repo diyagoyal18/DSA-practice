@@ -1,10 +1,6 @@
 #include<iostream>
 using namespace std;
-    // void printArray(int arr[],int n){
-    //     for(int i=0;i<n;i++){
-    //         cout<<arr[i]<<endl;
-    //     }
-    // }
+   
     int unique(int arr[],int n){
         int sum=0;
         for(int i=0;i<n;i++){
