@@ -6,12 +6,25 @@ int main(){
 
     cout<<num<<endl;
 cout<<"address of num: "<<&num<<endl;
-    int *ptr= &num;
-    cout<<"value: "<<*ptr<<endl;
-        cout<<"address: "<<ptr<<endl;
+    int *p= &num;
+    cout<<"value: "<<*p<<endl;
+        cout<<"address: "<<p<<endl;
 
+
+
+    int *q=p;
+    cout<<p<<"-"<<q<<endl;
+    cout<<*p<<"-"<<*q<<endl;
+
+    int i=4;
+    int *t= &i;
+    *t=*t+1;
+    cout<<*t<<endl;
+    cout<<"before t "<<t<<endl;
+    t=t+1;
+    cout<<"after t "<<t<<endl;
     return 0;
 }
-
+ 
 
     // for all types of data the size of pointer is 8
