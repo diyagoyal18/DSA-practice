@@ -77,7 +77,7 @@ void print(Node* &head){
     
 }
 
-void deleteNode(int position, Node* &head, Node* &tail){
+void deleteNode(int position, Node* &head){
 
     //deleting 1st node
     if(position==1){
