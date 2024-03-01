@@ -14,8 +14,12 @@ int fibonacci(int n){
 }
 int main(){
     int n;
+    int i=0;
     cin>>n;
-    
-    cout<<fibonacci(n)<<endl;
+    while(i<n){
+
+    cout<<fibonacci(i)<<" ";
+    i++;
+    }
     return 0;
 }
