@@ -48,8 +48,6 @@ int main(){
     int first = firstOccurance(arr,10,3);
     int last = lastOccurance(arr,10,3);
     cout<<"first occurance of 3 is:"<<first<<endl;
-
      cout<<"last occurance of 3 is:"<<last<<endl;
-
     return 0;
 }
