@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-//this is a sample code.. we can use vectors to proceed this code
+
 
 int SpiralPrint(int arr[][4], int row, int col){
     int total = row*col;
