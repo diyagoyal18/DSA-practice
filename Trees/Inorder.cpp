@@ -1,19 +1,17 @@
-//Level order traversal output
-
 #include<iostream>
 #include<queue>
 using namespace std;
 
-class node{
+class node {
     public:
-    int data;
-    node* left;
-    node* right;
+        int data;
+        node* left;
+        node* right;
 
-    node(int d){
-        this->data=d;
-        this->left=NULL;
-        this->right= NULL;
+    node(int d) {
+        this -> data = d;
+        this -> left = NULL;
+        this -> right = NULL;
     }
 };
 
@@ -35,6 +33,7 @@ node* buildTree(node* root) {
     return root;
 
 }
+
 void levelOrderTraversal(node* root) {
     queue<node*> q;
     q.push(root);
@@ -66,12 +65,31 @@ void levelOrderTraversal(node* root) {
 
 }
 
-int main(){
-    node* root= NULL;
-    root= buildTree(root);
-    cout<<"level of traversal is: "<<endl;
-    levelOrderTraversal(root);
-    return 0;
-}
+void inorder(node* root) {
+    //base case
+    if(root == NULL) {
+        return ;
+    }
 
-// 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
+    inorder(root->left);
+    cout << root-> data << " ";
+    inorder(root->right);
+
+}
+int main() {
+
+    node* root = NULL;
+
+    // 1 3 5 7 11 17 -1 -1 -1 -1 -1 -1 -1
+
+    
+    //creating a Tree
+    root = buildTree(root);
+    //1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1 
+    //level order
+    cout << "Printing the level order traversal output " << endl;
+    levelOrderTraversal(root);
+
+    cout << "inorder traversal is:  ";
+    inorder(root); 
+}
