@@ -1,17 +1,19 @@
+//Level order traversal output
+
 #include<iostream>
 #include<queue>
 using namespace std;
 
-class node {
+class node{
     public:
-        int data;
-        node* left;
-        node* right;
+    int data;
+    node* left;
+    node* right;
 
-    node(int d) {
-        this -> data = d;
-        this -> left = NULL;
-        this -> right = NULL;
+    node(int d){
+        this->data=d;
+        this->left=NULL;
+        this->right= NULL;
     }
 };
 
@@ -33,7 +35,6 @@ node* buildTree(node* root) {
     return root;
 
 }
-
 void levelOrderTraversal(node* root) {
     queue<node*> q;
     q.push(root);
@@ -64,33 +65,43 @@ void levelOrderTraversal(node* root) {
     }
 
 }
+void buildFromLevelOrder(node* &root){
+    queue<node*> q;
+    cout<<"enter daata for root"<<endl;
+    int data;
+    cin>>data;
+    root= new node(data);
+    q.push(root);
+    while (!q.empty())
+    {
+        node* temp= q.front();
+        q.pop();
+        cout<<"enter the left node for: "<<temp->data<<endl;
+        int leftData;
+        cin>>leftData;
+        if(leftData!=-1){
+            temp->left= new node(leftData);
+            q.push(temp->left);
+        }
 
-void inorder(node* root) {
-    //base case
-    if(root == NULL) {
-        return ;
+        cout<<"enter the right node for: "<<temp->data<<endl;
+        int rightData;
+        cin>>rightData;
+        if(rightData!=-1){
+            temp->right= new node(rightData);
+            q.push(temp->right);
+        }
     }
-
-    inorder(root->left);
-    cout << root-> data << " ";
-    inorder(root->right);
-    //LNR
-}
-
-int main() {
-
-    node* root = NULL;
-
-    // 1 3 5 7 11 17 -1 -1 -1 -1 -1 -1 -1
-
     
-    //creating a Tree
-    root = buildTree(root);
-    //1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1 
-    //level order
-    cout << "Printing the level order traversal output " << endl;
-    levelOrderTraversal(root);
-
-    cout << "inorder traversal is:  ";
-    inorder(root); 
 }
+
+
+int main(){
+    node* root= NULL;
+   buildFromLevelOrder(root);
+   levelOrderTraversal(root);
+    return 0;
+}
+// 1 3 5 7 11 17 -1 -1 -1 -1 -1 -1
+
+// 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1

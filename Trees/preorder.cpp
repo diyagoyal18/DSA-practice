@@ -65,16 +65,17 @@ void levelOrderTraversal(node* root) {
 
 }
 
-void inorder(node* root) {
+
+void preorder(node* root){
     //base case
     if(root == NULL) {
         return ;
     }
 
-    inorder(root->left);
     cout << root-> data << " ";
-    inorder(root->right);
-    //LNR
+    preorder(root->left);
+    preorder(root->right);
+    //NLR
 }
 
 int main() {
@@ -91,6 +92,6 @@ int main() {
     cout << "Printing the level order traversal output " << endl;
     levelOrderTraversal(root);
 
-    cout << "inorder traversal is:  ";
-    inorder(root); 
+    cout << "preorder traversal is:  ";
+    preorder(root); 
 }
